@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 청소당번 뽑기 🧼 | 공정하고 재미있는 랜덤 추천기</title>
+    <meta name="description" content="1번부터 30번의 번호 중 공정하게 오늘의 청소당번 5명을 랜덤으로 선정하는 프리미엄 웹 서비스입니다. 세련된 애니메이션, 실시간 효과음 및 축하 컨페티 효과를 제공합니다.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Canvas for Celebratory Confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-badge">
+                <span class="logo-emoji">🧼</span>
+                <span class="logo-glow"></span>
+            </div>
+            <h1>오늘의 청소당번</h1>
+            <p class="subtitle">1번부터 30번 중에서 공정하고 투명하게 5명의 당번을 뽑습니다.</p>
+        </header>
+
+        <!-- Main Dashboard Card -->
+        <main class="dashboard-card">
+            <!-- Selected Results Display Section -->
+            <section class="results-section">
+                <h2>선정된 청소당번 ✨</h2>
+                <div class="results-slots" id="results-slots-container">
+                    <div class="result-slot empty" id="slot-0">
+                        <span class="slot-number">?</span>
+                        <span class="slot-label">1순위</span>
+                    </div>
+                    <div class="result-slot empty" id="slot-1">
+                        <span class="slot-number">?</span>
+                        <span class="slot-label">2순위</span>
+                    </div>
+                    <div class="result-slot empty" id="slot-2">
+                        <span class="slot-number">?</span>
+                        <span class="slot-label">3순위</span>
+                    </div>
+                    <div class="result-slot empty" id="slot-3">
+                        <span class="slot-number">?</span>
+                        <span class="slot-label">4순위</span>
+                    </div>
+                    <div class="result-slot empty" id="slot-4">
+                        <span class="slot-number">?</span>
+                        <span class="slot-label">5순위</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Control Buttons -->
+            <section class="controls-section">
+                <button id="btn-draw" class="btn btn-primary" aria-label="청소당번 뽑기 시작">
+                    <span class="btn-icon">⚡</span> 당번 뽑기 시작
+                </button>
+                <button id="btn-reset" class="btn btn-secondary" aria-label="처음부터 다시 뽑기">
+                    <span class="btn-icon">🔄</span> 초기화
+                </button>
+            </section>
+
+            <!-- Number Grid (1-30) -->
+            <section class="grid-section">
+                <div class="section-title-bar">
+                    <h3>당번 후보 명단 (1 - 30)</h3>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text" id="status-message">대기 중</span>
+                    </div>
+                </div>
+                <div class="number-grid" id="number-grid-container">
+                    <!-- Dynamically populated numbers 1-30 in CSS-grid layout -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© 2026 청소당번 뽑기 프로젝트. Designed for premium web experiences.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
